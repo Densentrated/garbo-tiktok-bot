@@ -1,12 +1,15 @@
-<<<<<<< Updated upstream
-# Reddit URL's
-=======
 #!/usr/bin/env python3
 """Constants for the Program Go Here"""
 # URL Constants
 
 
-# Video Creation Constants
+# System Related Constants
+BACKGROUND_AUDIO_DIRECTORY = "./Background-Audio"
+GENERATED_AUDIO_DIRECTORY = "./Generated-Audio"
+VIDEOS_RAW_DIRECTORY = "./Videos-Raw"
+VIDEOS_FINISHED_DIRECTORY = "./Videos-Finished"
+FULL_DIRECTORY_LIST = [BACKGROUND_AUDIO_DIRECTORY, GENERATED_AUDIO_DIRECTORY,
+                       VIDEOS_RAW_DIRECTORY, VIDEOS_FINISHED_DIRECTORY]
+SEED_DIRECTORY_LIST = [BACKGROUND_AUDIO_DIRECTORY, VIDEOS_RAW_DIRECTORY]
 NUM_SONGS = 0
 NUM_VIDEOS = 0
->>>>>>> Stashed changes
