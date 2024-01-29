@@ -4,6 +4,7 @@ A Python Script that creates those robot text reddit videos that you keep seeing
 
 # Roadmap
 
+- [x] Check for Prerequisites
 - [ ] Create TTS Audio of a reddit post
 - [ ] Attach TTS Audio to Video
 - [ ] Make a Video with TTS audio from a reddit post
@@ -16,3 +17,4 @@ A Python Script that creates those robot text reddit videos that you keep seeing
 - First You need to install the following dependencies
   - `MoviePy => 1.0.3`
   - `requests => 2.31.0`
+  - `gTTS => 2.5.1`
