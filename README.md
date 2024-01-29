@@ -16,5 +16,3 @@ A Python Script that creates those robot text reddit videos that you keep seeing
 - First You need to install the following dependencies
   - `MoviePy => 1.0.3`
   - `requests => 2.31.0`
-- Next, you need to create a file with your reddit credentials called credentials.py
-  -``
