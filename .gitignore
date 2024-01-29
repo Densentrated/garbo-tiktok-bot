@@ -166,3 +166,6 @@ Background-Audio/
 Background-Video/
 Generated-Video/
 Generated-Audio/
+
+# removing the credentials file
+credentials.py

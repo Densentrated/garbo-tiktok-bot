@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """Constants for the Program Go Here"""
 
-# URL Constants
+# Reddit Constants
+SUBREDDIT_LIST = [
+    "AmItheAsshole",
+    "pettyrevenge",
+    "EntitledPeople",
+    "AmITheAngel",
+    "ApplyingToCollege",
+]
 
 # System Related Constants
 BACKGROUND_AUDIO_DIRECTORY = "./Background-Audio"
@@ -15,8 +22,6 @@ FULL_DIRECTORY_LIST = [
     GENERATED_VIDEO_DIRECTORY,
 ]
 SEED_DIRECTORY_LIST = [BACKGROUND_AUDIO_DIRECTORY, BACKGROUND_VIDEO_DIRECTORY]
-
-VIDEOS_FIXED = False
 
 # Program Related Constants
 WORD_LIMIT = 450
