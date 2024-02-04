@@ -18,3 +18,5 @@ A Python Script that creates those robot text reddit videos that you keep seeing
   - `MoviePy => 1.0.3`
   - `requests => 2.31.0`
   - `gTTS => 2.5.1`
+  - `audioread => 3.0.1`
+  - `pydub => 0.21.1`
