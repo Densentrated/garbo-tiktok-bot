@@ -65,6 +65,7 @@ print("post written to file")
 # Generate Captions for the Post
 # turns post into audio
 reddit_post = open("post.txt", "r").read()
+# TODO change tts library to better voices
 post_audio = gtts.gTTS(reddit_post)
 # saves the audio of the post to a file
 post_audio.save(constants.GENERATED_AUDIO_DIRECTORY + "/post.mp3")
