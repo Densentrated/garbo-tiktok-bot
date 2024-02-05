@@ -168,4 +168,4 @@ Generated-Video/
 Generated-Audio/
 
 # removing the credentials file
-credentials.py
+private_constants.py
