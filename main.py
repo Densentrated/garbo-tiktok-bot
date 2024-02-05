@@ -47,7 +47,7 @@ subreddit_string = constants.SUBREDDIT_LIST[
     random.randint(0, (len(constants.SUBREDDIT_LIST) - 1))
 ]
 subreddit = reddit_instance.subreddit(subreddit_string)
-posts = [post for post in subreddit.hot(limit=100)]
+posts = [post for post in subreddit.hot(limit=2000)]
 
 enough_words = False
 while not enough_words:
