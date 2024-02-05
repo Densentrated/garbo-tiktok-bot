@@ -6,11 +6,13 @@ import os
 import gtts
 import pydub
 import random
+import praw
 from moviepy.editor import AudioFileClip, VideoFileClip
 
 
 # local
 import constants
+import private_constants
 
 # Creates Directories
 empty_directories = False
@@ -35,8 +37,31 @@ if empty_directories:
     exit()
 
 # Picks a video and background track at random
-# Scrape the Web and find a random top post of the day
-# Generate Audio for the Post
+# Scrape the Web and find a random top post of the day, repeat process until post has correct amount of words
+reddit_instance = praw.Reddit(
+    client_id=private_constants.CLIENT_ID,
+    client_secret=private_constants.CLIENT_SECRET,
+    user_agent=private_constants.USER_AGENT,
+)
+subreddit_string = constants.SUBREDDIT_LIST[
+    random.randint(0, (len(constants.SUBREDDIT_LIST) - 1))
+]
+subreddit = reddit_instance.subreddit(subreddit_string)
+posts = [post for post in subreddit.hot(limit=100)]
+
+enough_words = False
+while not enough_words:
+    random_post = random.choice(posts)
+    if (len(random_post.selftext) > 1250) and (len(random_post.selftext) < 2200):
+        enough_words = True
+    print("post wrong size")
+print("post found")
+
+with open("post.txt", "w") as f:
+    f.write(random_post.title + "\n")
+    f.write(random_post.selftext)
+print("post written to file")
+
 # Generate Captions for the Post
 # turns post into audio
 reddit_post = open("post.txt", "r").read()
@@ -55,13 +80,11 @@ audio_clip = pydub.AudioSegment.from_file(
     constants.GENERATED_AUDIO_DIRECTORY + "/post.mp3"
 )
 audio_duration = int(audio_clip.duration_seconds + 1)
-print(audio_duration)
 # grabs clip the video that is as long as the audio file
 seed_video_duration = VideoFileClip(
     constants.BACKGROUND_VIDEO_DIRECTORY + "/Video0.mp4"
 )
 seed_video_duration = int(seed_video_duration.duration - 1)
-print(seed_video_duration)
 
 final_post_start = random.randint(audio_duration, seed_video_duration)
 final_post_end = final_post_start - audio_duration

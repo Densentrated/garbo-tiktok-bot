@@ -7,7 +7,9 @@ SUBREDDIT_LIST = [
     "pettyrevenge",
     "EntitledPeople",
     "AmITheAngel",
-    "ApplyingToCollege",
+    "AskReddit",
+    "bestof",
+    "relationship_advice",
 ]
 
 # System Related Constants

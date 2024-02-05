@@ -20,3 +20,8 @@ A Python Script that creates those robot text reddit videos that you keep seeing
   - `gTTS => 2.5.1`
   - `audioread => 3.0.1`
   - `pydub => 0.21.1`
+- Next, Create a file called "private_constants.py", and a reddit API app
+- fill the info out in the following format
+  - `CLIENT_ID = "Your ID`
+  - `CLIENT_SECRET = "Your Client Secret"`
+  - `USER_AGENT = "Your User Agent`
