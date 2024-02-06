@@ -50,11 +50,18 @@ subreddit = reddit_instance.subreddit(subreddit_string)
 posts = [post for post in subreddit.hot(limit=2000)]
 
 enough_words = False
+post_counter = 0
 while not enough_words:
     random_post = random.choice(posts)
     if (len(random_post.selftext) > 1250) and (len(random_post.selftext) < 2200):
         enough_words = True
+    else:
+        post_counter += 1
+    if post_counter > 200:
+        print("not enough posts, rerun script")
+        exit()
     print("post wrong size")
+
 print("post found")
 
 with open("post.txt", "w") as f:
@@ -99,9 +106,13 @@ final_post_audio = AudioFileClip(constants.GENERATED_AUDIO_DIRECTORY + "/post.mp
 final_post = final_post.set_audio(final_post_audio)
 # overlays music over the video
 
+# picks the video number
+video_num = len(os.listdir(constants.GENERATED_VIDEO_DIRECTORY))
+video_num = str(video_num)
+print("video number " + video_num)
 # renders the video
 final_post.write_videofile(
-    constants.GENERATED_VIDEO_DIRECTORY + "/video.mp4",
+    constants.GENERATED_VIDEO_DIRECTORY + "/video" + video_num + ".mp4",
     codec="libx264",
     audio_codec="mp3",
     bitrate="5000k",

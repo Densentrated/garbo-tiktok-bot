@@ -8,6 +8,7 @@ A Python Script that creates those robot text reddit videos that you keep seeing
 - [x] Create TTS Audio of a reddit post
 - [x] Attach TTS Audio to Video
 - [x] Make a Video with TTS audio from a reddit post
+- [ ] General Code Cleanup
 - [ ] Add background music to the video
 - [ ] Add captions to the video front in center
 - [ ] Create a tool to format the videos correct first
