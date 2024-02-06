@@ -37,7 +37,8 @@ if empty_directories:
     exit()
 
 # Picks a video and background track at random
-# Scrape the Web and find a random top post of the day, repeat process until post has correct amount of words
+# Scrape the Web and find a random top post of the day,
+# repeat process until post has correct amount of words
 reddit_instance = praw.Reddit(
     client_id=private_constants.CLIENT_ID,
     client_secret=private_constants.CLIENT_SECRET,
@@ -53,7 +54,7 @@ enough_words = False
 post_counter = 0
 while not enough_words:
     random_post = random.choice(posts)
-    if (len(random_post.selftext) > 1250) and (len(random_post.selftext) < 2200):
+    if (len(random_post.selftext) > 1250) and (len(random_post.selftext) < 4200):
         enough_words = True
     else:
         post_counter += 1
